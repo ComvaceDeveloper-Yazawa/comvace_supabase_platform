@@ -1,7 +1,13 @@
+// tsconfig.app.json
+
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
 
     /* Linting */
     "strict": true,
@@ -13,3 +19,21 @@
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
+
+// explanation
+// 役割: アプリケーションコード専用のTypeScript設定
+// 特徴:
+
+// extends: Vue公式のDOM環境用設定を継承
+// tsBuildInfoFile: ビルド情報の保存場所を指定（インクリメンタルビルド用）
+// include: srcディレクトリ内の.ts, .tsx, .vueファイルのみを対象
+// より厳密なlinting設定:
+
+// erasableSyntaxOnly: true: 型注釈のみの構文を許可
+// noUncheckedSideEffectImports: true: 副作用のないimportをチェック
+
+// エイリアス設定
+// "baseUrl": ".",
+// "paths": {
+//   "@/*": ["src/*"]
+// }

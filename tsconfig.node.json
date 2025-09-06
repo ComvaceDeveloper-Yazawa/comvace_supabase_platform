@@ -1,10 +1,13 @@
+// tsconfig.node.json
+
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2023",
+    "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "composite": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,3 +26,13 @@
   },
   "include": ["vite.config.ts"]
 }
+
+// explanation
+// 役割: Vite設定ファイルなど、Node.js環境で実行されるファイル用
+// 特徴:
+
+// target: "ES2022": より新しいES仕様を使用（Node.js環境のため）
+// composite: true: プロジェクトリファレンス機能を有効化
+// verbatimModuleSyntax: true: import/exportの構文を厳密にチェック
+// moduleDetection: "force": すべてのファイルをモジュールとして扱う
+// include: ["vite.config.ts"]: Vite設定ファイルのみを対象

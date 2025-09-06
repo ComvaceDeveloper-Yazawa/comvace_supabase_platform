@@ -1,7 +1,45 @@
+// tsconfig.json
+
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
+
+// explanation
+
+// 1. tsconfig.json (ルート設定ファイル)
+// 役割: プロジェクト全体のTypeScript設定のベース
+// 主要設定:
+
+// target: "ES2020": ES2020形式にコンパイル
+// module: "ESNext": 最新のESモジュール形式を使用
+// moduleResolution: "bundler": Viteなどのモダンバンドラー向けの解決方式
+// jsx: "preserve": JSXをそのまま保持（Vueの場合は必要）
+// isolatedModules: true: 各ファイルを独立してコンパイル可能にする
+// noEmit: true: .jsファイルを生成しない（Viteがバンドル処理を行うため）
+
+// // エイリアス設定
+// "baseUrl": ".",
+// "paths": {
+//   "@/*": ["src/*"]
+// }
