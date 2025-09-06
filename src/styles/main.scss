@@ -1,0 +1,16 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+:root {
+  --brand: #{$brand}; // CSS変数に落とす場合
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.card {
+  @include card;
+  padding: 24px;
+}
