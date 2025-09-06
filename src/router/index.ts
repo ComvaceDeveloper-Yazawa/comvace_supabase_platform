@@ -10,32 +10,13 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/HomeIndex.vue"),
     meta: { title: "Home" },
   },
-  {
-    path: "/about",
-    name: "about",
-    component: () => import("@/views/AboutView.vue"),
-    meta: { title: "About" },
-  },
-  {
-    path: "/dashboard",
-    name: "dashboard",
-    component: () => import("@/views/DashboardView.vue"),
-    // ログイン必須ページの例
-    meta: { requiresAuth: true, title: "Dashboard" },
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("@/views/LoginView.vue"),
-    meta: { guestOnly: true, title: "Login" },
-  },
   // 404（キャッチオール）
-  {
-    path: "/:pathMatch(.*)*",
-    name: "not-found",
-    component: () => import("@/views/NotFoundView.vue"),
-    meta: { title: "Not Found" },
-  },
+  // {
+  //   path: "/:pathMatch(.*)*",
+  //   name: "not-found",
+  //   component: () => import("@/views/NotFoundView.vue"),
+  //   meta: { title: "Not Found" },
+  // },
 ];
 
 const router = createRouter({
