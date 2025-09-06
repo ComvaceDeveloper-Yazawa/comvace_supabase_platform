@@ -1,79 +1,129 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Modern CSS Reset 2025
+   A practical baseline for better web development */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 1. より直感的なbox-sizingモデル */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+/* 2. デフォルトマージンを削除 */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
+/* 3. フォントサイズの拡大を防ぐ */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  /* 4. キーワードアニメーションを有効化（Chrome/Edge対応） */
+  interpolate-size: allow-keywords;
+}
+
+/* 5. デフォルトマージンを削除（より細かい制御のため） */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* 6. list roleを持つul, ol要素のリストスタイルを削除 */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* 7. bodyの基本設定 */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+}
+
+/* 8. 見出しとインタラクティブ要素の行間を短く */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* 9. 見出しのテキストラッピングをバランス調整 */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* 10. クラスのないa要素にデフォルトスタイル */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* 11. メディア要素の基本設定 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 12. フォーム要素の継承設定 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color: #000;
 }
 
-.card {
-  padding: 2em;
+/* 13. 行数属性のないtextareaの最小高さ */
+textarea:not([rows]) {
+  min-height: 10em;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 14. アンカーされた要素のスクロールマージン */
+:target {
+  scroll-margin-block: 5ex;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* 15. 動きを減らす設定を尊重 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  a:hover {
-    color: #747bff;
+
+  html {
+    interpolate-size: none;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+/* 16. フォーカス可能な要素のアウトライン */
+:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
 }

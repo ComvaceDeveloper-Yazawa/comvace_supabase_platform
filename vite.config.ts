@@ -15,5 +15,13 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(process.cwd(), "src"),
       },
     },
+    // variables/mixins を全コンポーネントで使えるようにする
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/styles/_index.scss" as *;`,
+        },
+      },
+    },
   };
 });
