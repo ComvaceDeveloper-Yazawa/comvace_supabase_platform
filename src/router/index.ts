@@ -10,6 +10,13 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/HomeIndex.vue"),
     meta: { title: "Home" },
   },
+  {
+    path: "/pc/assignment1",
+    name: "pc/assignment1",
+    // 遅延ロード（コード分割）
+    component: () => import("@/views/AssignmentHTML1.vue"),
+    meta: { title: "PC Assignment 1" },
+  },
   // 404（キャッチオール）
   // {
   //   path: "/:pathMatch(.*)*",
