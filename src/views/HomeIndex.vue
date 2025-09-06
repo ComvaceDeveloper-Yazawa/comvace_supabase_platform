@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NavigationModal from "@/components/modal/NavigationModal.vue";
-import AssignmentHTML1 from "@/components/AssignmentHTML1.vue";
+// import AssignmentHTML1 from "@/components/AssignmentHTML1.vue";
 import AssignmentHTML2 from "@/components/AssignmentHTML2.vue";
 import AssignmentHTML3 from "@/components/AssignmentHTML3.vue";
 import AssignmentHTML4 from "@/components/AssignmentHTML4.vue";
@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
     </nav>
   </div>
   <NavigationModal v-if="isMenuDisplay === false" />
-  <AssignmentHTML1 v-if="displayPages === '1' && selectedDevice === 'pc'" />
+  <!-- <AssignmentHTML1 v-if="displayPages === '1' && selectedDevice === 'pc'" /> -->
   <AssignmentHTML2 v-if="displayPages === '1' && selectedDevice === 'sp'" />
   <AssignmentHTML3 v-if="displayPages === '2' && selectedDevice === 'pc'" />
   <AssignmentHTML4 v-if="displayPages === '2' && selectedDevice === 'sp'" />
