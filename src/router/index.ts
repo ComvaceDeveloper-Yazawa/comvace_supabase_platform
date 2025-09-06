@@ -41,7 +41,7 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL), // Viteのbaseに追従
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
     // 戻る/進む時は前の位置へ、それ以外はページトップへ
     if (savedPosition) return savedPosition;
     if (to.hash) return { el: to.hash };
