@@ -1,13 +1,20 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useGlobalStore = defineStore("global", () => {
-  const displayPage = ref<string>("main");
-  const selectedMenu = ref<string>("main");
+export const useGlobalStore = defineStore(
+  "global",
+  () => {
+    const displayPage = ref<string>("main");
+    const selectedMenu = ref<string>("main");
+    const selectedDevice = ref<"pc" | "sp" | "">("");
 
-  // function increment() {
-  //   count.value = 100;
-  // }
+    // function increment() {
+    //   count.value = 100;
+    // }
 
-  return { displayPage, selectedMenu };
-});
+    return { displayPage, selectedMenu, selectedDevice };
+  },
+  {
+    persist: true,
+  },
+);
