@@ -34,8 +34,8 @@ const routes: RouteRecordRaw[] = [
     meta: { title: "HTML課題2 SP" },
   },
   {
-    path: "/pc/assignment3",
-    name: "pc/assignment3",
+    path: "/assignment3",
+    name: "/assignment3",
     component: () => import("@/views/html/common/Ass3.vue"),
     meta: { title: "HTML課題3" },
   },
@@ -51,9 +51,8 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL), // Viteのbaseに追従
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to, _from, savedPosition) {
     // 戻る/進む時は前の位置へ、それ以外はページトップへ
-    console.log(from);
     if (savedPosition) return savedPosition;
     if (to.hash) return { el: to.hash };
     return { top: 0 };
