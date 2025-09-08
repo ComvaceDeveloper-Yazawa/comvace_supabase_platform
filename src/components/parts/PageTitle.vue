@@ -17,8 +17,8 @@ defineProps<{
   position: relative;
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
-  margin: 80px 0;
+  padding: 80px 0 30px 0;
+  margin-bottom: 80px;
 
   &::after {
     content: "";

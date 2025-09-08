@@ -1,68 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import menu1 from "@/assets/menu1.png";
-import menu2 from "@/assets/menu2.png";
-import menu3 from "@/assets/menu3.png";
-import menu4 from "@/assets/menu4.png";
-import menu5 from "@/assets/menu5.png";
-import menu6 from "@/assets/menu6.png";
-import menu7 from "@/assets/menu7.png";
-import menu8 from "@/assets/menu8.png";
-
-const menuList = ref([
-  {
-    id: 1,
-    path: menu1,
-    name: "アロマブレンド珈琲豆",
-    price: "￥3,350",
-  },
-  {
-    id: 2,
-    path: menu2,
-    name: "マイルドブレンド珈琲豆",
-    price: "￥3,350",
-  },
-  {
-    id: 3,
-    path: menu3,
-    name: "リッチブレンド珈琲豆",
-    price: "￥3,350",
-  },
-  {
-    id: 4,
-    path: menu4,
-    name: "アメリカン珈琲豆",
-    price: "￥3,350",
-  },
-  {
-    id: 5,
-    path: menu5,
-    name: "クリスタルマウンテン珈琲豆",
-    price: "￥7,850",
-  },
-  {
-    id: 6,
-    path: menu6,
-    name: "カリビアンクイーン珈琲豆",
-    price: "￥5,850",
-  },
-  {
-    id: 7,
-    path: menu7,
-    name: "マンデリン珈琲豆",
-    price: "￥4,350",
-  },
-  {
-    id: 8,
-    path: menu8,
-    name: "ロブスタ珈琲豆",
-    price: "￥3,350",
-  },
-]);
+import { homeMenuList } from "@/utils/const";
+import NavigationModal from "@/components/modal/NavigationModal.vue";
 </script>
 <template>
-  <div class="outer">
-    <div class="inner">
+  <div class="outer background-banner">
+    <div class="sp-width">
       <div class="main-view">
         <p>コーヒーショップを作ってみよう！</p>
         <img src="/src/assets/main-view.png" alt="" />
@@ -74,10 +16,6 @@ const menuList = ref([
             <button>絞り込み</button>
           </div>
           <div class="function">
-            <div class="search">
-              <input type="text" placeholder="" />
-              <button>検索</button>
-            </div>
             <div class="select">
               <select name="category" id="category">
                 <option value="dummy" disabled selected hidden>並び替え</option>
@@ -88,7 +26,7 @@ const menuList = ref([
           </div>
         </div>
         <div class="menu-cards">
-          <div v-for="menu in menuList" :key="menu.id" class="card">
+          <div v-for="menu in homeMenuList" :key="menu.id" class="card">
             <img :src="menu.path" alt="" />
             <div class="menu-info">
               <p>{{ menu.name }}</p>
@@ -104,25 +42,9 @@ const menuList = ref([
       </div>
     </div>
   </div>
+  <NavigationModal />
 </template>
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
-
-body {
-  font-family: "Noto Sans JP", "Noto Sans", system-ui, -apple-system, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
-}
-.outer {
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.inner {
-  width: 390px;
-}
-
 .main-view {
   position: relative;
   height: 100svh;
@@ -135,7 +57,8 @@ body {
     font-weight: 700;
     font-size: 20px;
     background-color: #fff;
-    padding: 11px 36px;
+    padding: 11px 0;
+    text-align: center;
   }
   img {
     width: 100%;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HTML3Information from "./HTML3Information.vue";
+import HTML3Information from "@/components/HTML3Information.vue";
 
 defineProps<{
   device: string;

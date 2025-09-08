@@ -6,16 +6,38 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/",
     name: "home",
-    // 遅延ロード（コード分割）
     component: () => import("@/views/HomeIndex.vue"),
     meta: { title: "Home" },
   },
   {
     path: "/pc/assignment1",
     name: "pc/assignment1",
-    // 遅延ロード（コード分割）
-    component: () => import("@/views/AssignmentHTML1.vue"),
-    meta: { title: "PC Assignment 1" },
+    component: () => import("@/views/html/pc/Ass1PC.vue"),
+    meta: { title: "HTML課題1 PC" },
+  },
+  {
+    path: "/sp/assignment1",
+    name: "sp/assignment1",
+    component: () => import("@/views/html/sp/Ass1SP.vue"),
+    meta: { title: "HTML課題1 SP" },
+  },
+  {
+    path: "/pc/assignment2",
+    name: "pc/assignment2",
+    component: () => import("@/views/html/pc/Ass2PC.vue"),
+    meta: { title: "HTML課題2 PC" },
+  },
+  {
+    path: "/sp/assignment2",
+    name: "sp/assignment2",
+    component: () => import("@/views/html/sp/Ass2SP.vue"),
+    meta: { title: "HTML課題2 SP" },
+  },
+  {
+    path: "/pc/assignment3",
+    name: "pc/assignment3",
+    component: () => import("@/views/html/common/Ass3.vue"),
+    meta: { title: "HTML課題3" },
   },
   // 404（キャッチオール）
   // {

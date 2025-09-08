@@ -7,10 +7,9 @@ const isDisplay = ref<boolean>(true);
   <div class="outer" v-if="isDisplay">
     <div class="inner">
       <p>閉じるボタンをクリックするとページが表示されます。</p>
-      <p>ページ表示後にメニューに戻る場合はページをリロードしてください。</p>
       <p>
         ⚠️
-        SPは検証ツールから横幅を390pxに設定した想定で作成しています。そのため、コンテンツ以外の背景色を黒にしていますが、カリキュラムで作成する際は検証ツールから横幅を390pxに設定し、コンテンツのみを作成してください
+        PCは横幅1440px、スマホは390pxを想定して作成してください。このデモサイトでは、カリキュラムで作成する範囲意外の色をグレーにしています。実際に実装する際は、ブラウザの検証ツールから横幅を390pxに指定してデザイン通りに作成できていればOKです。
       </p>
       <button @click="isDisplay = false">閉じる</button>
     </div>
@@ -33,6 +32,7 @@ const isDisplay = ref<boolean>(true);
   top: 50%;
   left: 50%;
   width: 90vw;
+  max-width: 800px;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
@@ -55,6 +55,11 @@ const isDisplay = ref<boolean>(true);
     &:hover {
       background-color: rgba(0, 0, 0, 0.7);
     }
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.5;
+    max-width: 800px;
   }
 }
 </style>
