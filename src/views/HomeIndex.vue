@@ -5,7 +5,7 @@ import { storeToRefs } from "pinia";
 import { useGlobalStore } from "../stores/global.store";
 
 const globalStore = useGlobalStore();
-const { displayPage, selectedMenu } = storeToRefs(globalStore);
+const { displayPage, selectedMenu, selectedDevice } = storeToRefs(globalStore);
 
 onMounted(() => {
   typeWriter();
@@ -20,8 +20,14 @@ const selectedAssignment = (pageIndex: string) => {
   displayPage.value = pageIndex;
   selectedMenu.value = "device";
 };
-const selectedDeviceHandler = (device: string) => {
-  open(`/${device}/assignment${displayPage.value}`, "_blank");
+const selectedDeviceHandler = (device: "pc" | "sp") => {
+  selectedDevice.value = device;
+  console.log(selectedDevice.value);
+  if (displayPage.value === "3") {
+    open(`/assignment${displayPage.value}`, "_blank");
+  } else {
+    open(`/${selectedDevice.value}/assignment${displayPage.value}`, "_blank");
+  }
 };
 
 // OpeningAnimation

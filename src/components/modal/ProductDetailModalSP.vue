@@ -18,7 +18,7 @@ const openProductDetailModal = defineModel();
         />
         <div class="detail-area">
           <div class="title-and-amount">
-            <p class="title">マイルドブレンド珈琲豆</p>
+            <p class="title">マイルドブレンドsss珈琲豆</p>
             <p class="amount">￥3,350</p>
           </div>
           <div class="explain">

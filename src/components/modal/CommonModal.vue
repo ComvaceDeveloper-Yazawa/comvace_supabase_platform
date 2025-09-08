@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { useGlobalStore } from "@/stores/global.store";
+
+const globalStore = useGlobalStore();
+const { selectedDevice } = storeToRefs(globalStore);
 const props = defineProps({
   selectedDisplayModal: {
-    type: String,
-    default: "",
-  },
-  device: {
     type: String,
     default: "",
   },
@@ -13,7 +14,7 @@ const props = defineProps({
 const openCommonModal = defineModel();
 </script>
 <template>
-  <div v-if="props.device === 'pc'" class="modal-outer">
+  <div v-if="selectedDevice === 'pc'" class="modal-outer">
     <div class="modal-inner">
       <img
         src="@/assets/close-icon.png"
@@ -32,7 +33,7 @@ const openCommonModal = defineModel();
       </p>
     </div>
   </div>
-  <div v-if="props.device === 'sp'" class="mobile-only-outer">
+  <div v-if="selectedDevice === 'sp'" class="mobile-only-outer">
       <div class="modal-outer">
     <div class="modal-inner">
       <img
