@@ -89,7 +89,6 @@ function onAnimEnd(_e: AnimationEvent) {
 </template>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 .animation-outer {
   white-space: nowrap;
   overflow: hidden;

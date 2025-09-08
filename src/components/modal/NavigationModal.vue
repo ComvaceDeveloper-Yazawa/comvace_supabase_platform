@@ -16,7 +16,6 @@ const isDisplay = ref<boolean>(true);
   </div>
 </template>
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 .outer {
   position: fixed;
   top: 0;

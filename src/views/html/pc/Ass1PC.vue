@@ -42,8 +42,6 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
   <NavigationModal />
 </template>
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
-
 .main-view {
   position: relative;
   height: 750px;
