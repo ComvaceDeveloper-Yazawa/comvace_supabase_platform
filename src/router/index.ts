@@ -39,6 +39,18 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/html/common/Ass3.vue"),
     meta: { title: "HTML課題3" },
   },
+  {
+    path: "/pc/assignment4",
+    name: "pc/assignment4",
+    component: () => import("@/views/html/pc/Ass4PC.vue"),
+    meta: { title: "HTML課題4 PC" },
+  },
+  {
+    path: "/sp/assignment4",
+    name: "sp/assignment4",
+    component: () => import("@/views/html/sp/Ass4SP.vue"),
+    meta: { title: "HTML課題4 SP" },
+  },
   // 404（キャッチオール）
   // {
   //   path: "/:pathMatch(.*)*",

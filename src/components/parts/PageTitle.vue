@@ -11,6 +11,7 @@ defineProps<{
 </template>
 <style scoped lang="scss">
 .page-title {
+  font-family: noto-sans-jp, sans-serif;
   font-size: 28px;
   font-weight: bold;
   color: #000;
@@ -19,6 +20,7 @@ defineProps<{
   justify-content: center;
   padding: 80px 0 30px 0;
   margin-bottom: 80px;
+  font-weight: 400;
 
   &::after {
     content: "";
@@ -34,7 +36,6 @@ defineProps<{
 
 .mobile-title {
   font-size: 20px;
-  font-weight: bold;
   color: #000;
   position: relative;
   display: flex;
@@ -42,6 +43,7 @@ defineProps<{
   padding-top: 50px;
   padding-bottom: 40px;
   margin-bottom: 50px;
+  font-weight: 400;
 
   &::after {
     content: "";
