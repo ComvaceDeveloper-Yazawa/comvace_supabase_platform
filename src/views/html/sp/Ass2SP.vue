@@ -6,7 +6,7 @@ import PageBottomNavSP from "@/components/parts/PageBottomNavSP.vue";
 <template>
   <div class="outer background-banner">
     <div class="inner sp-width">
-      <PageTitle :title="'カート一覧'" :isPc="false" />
+      <PageTitle :title="'カート一覧'" :type="'common'" :device="'sp'" />
       <TableViewSP />
       <PageBottomNavSP
         :text="'購入手続きはこちらから行うことができます'"

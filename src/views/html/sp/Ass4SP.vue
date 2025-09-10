@@ -8,7 +8,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
   <div class="outer background-banner">
     <div class="sp-width">
       <div class="main-view">
-        <PageTitle :title="'購入手続き'" :isPc="false" />
+        <PageTitle :title="'購入手続き'" :type="'common'" :device="'sp'" />
         <PaymentSelect :isPc="false" />
         <PageBottomNavSP
           :text="'購入手続きはこちらから行うことができます'"

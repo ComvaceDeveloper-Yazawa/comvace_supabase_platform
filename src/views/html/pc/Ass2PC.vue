@@ -7,7 +7,7 @@ import PageBottomNav from "@/components/parts/PageBottomNav.vue";
   <div class="background-banner">
     <div class="pc-width">
       <div class="main-view">
-        <PageTitle :title="'カート一覧'" :isPc="true" />
+        <PageTitle :title="'カート一覧'" :type="'common'" :device="'pc'" />
         <TableView />
         <PageBottomNav
           :text="'購入手続きはこちらから行うことができます'"
