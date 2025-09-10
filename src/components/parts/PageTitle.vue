@@ -1,16 +1,17 @@
 <script setup lang="ts">
 defineProps<{
   title: string;
-  isPc: boolean;
+  device: "pc" | "sp";
+  type: "common" | "inquiry";
 }>();
 </script>
 <template>
-  <div :class="isPc === true ? 'page-title' : 'mobile-title'">
+  <div :class="[device, type]">
     {{ title }}
   </div>
 </template>
 <style scoped lang="scss">
-.page-title {
+.pc {
   font-family: noto-sans-jp, sans-serif;
   font-size: 28px;
   font-weight: bold;
@@ -19,8 +20,15 @@ defineProps<{
   display: flex;
   justify-content: center;
   padding: 80px 0 30px 0;
-  margin-bottom: 80px;
   font-weight: 400;
+
+  .common {
+    margin-bottom: 80px;
+  }
+
+  .inquiry {
+    margin-bottom: 80px;
+  }
 
   &::after {
     content: "";
@@ -34,16 +42,23 @@ defineProps<{
   }
 }
 
-.mobile-title {
+.sp {
   font-size: 20px;
   color: #000;
   position: relative;
   display: flex;
   justify-content: center;
   padding-top: 50px;
-  padding-bottom: 40px;
-  margin-bottom: 50px;
+  padding-bottom: 15px;
   font-weight: 400;
+
+  .common {
+    margin-bottom: 50px;
+  }
+
+  .inquiry {
+    margin-bottom: 80px;
+  }
 
   &::after {
     content: "";
@@ -51,7 +66,7 @@ defineProps<{
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    border-bottom: #d89323 6px solid;
+    border-bottom: #d89323 4px solid;
     width: 40px;
     margin-top: 8px;
   }

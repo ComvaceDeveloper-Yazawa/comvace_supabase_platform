@@ -136,6 +136,8 @@ textarea:not([rows]) {
   max-width: 390px;
   margin: 0 auto;
 }
+
+// 画面の背景（実装不要の案内をするため）
 .background-banner {
   background-color: rgb(0, 0, 0, 0.6);
   background-image: url("data:image/svg+xml;utf8,\
@@ -157,5 +159,12 @@ body {
     "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
+textarea {
+  resize: none;
+  height: 200px;
+}
+
+// ドット調のフォント
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+// Notosansjp
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap");
