@@ -63,6 +63,58 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/html/sp/Ass5SP.vue"),
     meta: { title: "HTML課題5 SP" },
   },
+  {
+    path: "/pc/assignment6",
+    name: "pc/assignment6",
+    component: () => import("@/views/html/layout/DefaultLayout.vue"),
+    meta: { title: "HTML課題6 PC" },
+    children: [
+      {
+        path: "home",
+        name: "Ass6home",
+        component: () => import("@/views/html/pc/Ass1PC.vue"),
+        meta: { title: "HTML課題6 ホーム画面PC" },
+      },
+      {
+        path: "cart",
+        name: "Ass6cart",
+        component: () => import("@/views/html/pc/Ass2PC.vue"),
+        meta: { title: "HTML課題6 カート画面PC" },
+      },
+      {
+        path: "inquiry",
+        name: "Ass6inquiry",
+        component: () => import("@/views/html/pc/Ass5PC.vue"),
+        meta: { title: "HTML課題6 お問い合わせ画面PC" },
+      },
+    ],
+  },
+  {
+    path: "/sp/assignment6",
+    name: "sp/assignment6",
+    component: () => import("@/views/html/layout/DefaultLayout.vue"),
+    meta: { title: "HTML課題6 SP" },
+    children: [
+      {
+        path: "home",
+        name: "Ass6home_sp",
+        component: () => import("@/views/html/sp/Ass1SP.vue"),
+        meta: { title: "HTML課題6 ホーム画面SP" },
+      },
+      {
+        path: "cart",
+        name: "Ass6cart_sp",
+        component: () => import("@/views/html/sp/Ass2SP.vue"),
+        meta: { title: "HTML課題6 カート画面SP" },
+      },
+      {
+        path: "inquiry",
+        name: "Ass6inquiry_sp",
+        component: () => import("@/views/html/sp/Ass5SP.vue"),
+        meta: { title: "HTML課題6 お問い合わせ画面SP" },
+      },
+    ],
+  },
   // 404（キャッチオール）
   // {
   //   path: "/:pathMatch(.*)*",

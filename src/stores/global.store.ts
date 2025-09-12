@@ -7,12 +7,9 @@ export const useGlobalStore = defineStore(
     const displayPage = ref<string>("main");
     const selectedMenu = ref<string>("main");
     const selectedDevice = ref<"pc" | "sp" | "">("");
+    const isNavigationDisplay = ref<boolean>(true);
 
-    // function increment() {
-    //   count.value = 100;
-    // }
-
-    return { displayPage, selectedMenu, selectedDevice };
+    return { displayPage, selectedMenu, selectedDevice, isNavigationDisplay };
   },
   {
     persist: true,
