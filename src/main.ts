@@ -13,17 +13,18 @@ app.use(pinia);
 app.use(router);
 app.mount("#app");
 
-//   DisableDevTool({
-//     // options
-//     disableMenu: true,
-//     clearIntervalWhenDevOpenTrigger: false,
-//     ondevtoolopen: () => {
-//       document.documentElement.style.display = "none";
-//       document.body.innerHTML = "none";
-//       // window.location.href = document.referrer;
-//     },
-//     ondevtoolclose: () => {
-//       window.location.reload();
-//     },
-//   });
-// });
+import("disable-devtool").then(({ default: DisableDevTool }) => {
+  DisableDevTool({
+    // options
+    disableMenu: true,
+    clearIntervalWhenDevOpenTrigger: false,
+    ondevtoolopen: () => {
+      document.documentElement.style.display = "none";
+      document.body.innerHTML = "none";
+      // window.location.href = document.referrer;
+    },
+    ondevtoolclose: () => {
+      window.location.reload();
+    },
+  });
+});

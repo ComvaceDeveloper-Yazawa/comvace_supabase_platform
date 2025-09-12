@@ -37,3 +37,7 @@ import { useGlobalStore } from "@/stores/global.store";
 import { storeToRefs } from "pinia";
 const globalStore = useGlobalStore();
 const { isNavigationDisplay } = storeToRefs(globalStore);
+
+<!-- 検証ツールの制御 -->
+
+npm install disable-devtool
