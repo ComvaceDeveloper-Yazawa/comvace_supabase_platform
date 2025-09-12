@@ -30,3 +30,10 @@
    npm install --save-dev @typescript-eslint/parser
    npm install --save-dev vue-eslint-parser
    npm install --save-dev jiti
+
+<!-- Pinia のファイル呼び出し -->
+
+import { useGlobalStore } from "@/stores/global.store";
+import { storeToRefs } from "pinia";
+const globalStore = useGlobalStore();
+const { isNavigationDisplay } = storeToRefs(globalStore);
