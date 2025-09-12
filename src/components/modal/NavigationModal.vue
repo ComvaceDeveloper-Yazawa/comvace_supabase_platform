@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { useGlobalStore } from "@/stores/global.store";
+import { storeToRefs } from "pinia";
+const globalStore = useGlobalStore();
+const { isNavigationDisplay } = storeToRefs(globalStore);
+
+onMounted(() => {
+  if (!isNavigationDisplay.value) {
+    isDisplay.value = false;
+  }
+});
 
 const isDisplay = ref<boolean>(true);
 </script>

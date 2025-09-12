@@ -25,7 +25,7 @@ import PageBottomNavSP from "@/components/parts/PageBottomNavSP.vue";
 }
 
 .inner {
-  background-color: #fff9f4;
+  background-color: var(--background-color-main);
   padding-bottom: 50px;
 }
 </style>

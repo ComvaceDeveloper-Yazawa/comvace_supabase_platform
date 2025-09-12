@@ -16,7 +16,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
 </template>
 <style scoped lang="scss">
 .main-view {
-  background-color: #fff9f4;
+  background-color: var(--background-color-main);
   padding-bottom: 50px;
 }
 </style>

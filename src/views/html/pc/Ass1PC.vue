@@ -63,7 +63,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
 }
 
 .content {
-  background-color: #fff9f4;
+  background-color: var(--background-color-main);
   width: 100%;
   padding: 80px 90px;
   display: flex;
@@ -118,6 +118,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   grid-auto-rows: 390px;
+  cursor: pointer;
   .card {
     padding: 0 30px;
     background-color: #fff;

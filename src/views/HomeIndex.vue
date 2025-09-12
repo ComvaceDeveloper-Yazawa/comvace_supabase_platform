@@ -22,9 +22,13 @@ const selectedAssignment = (pageIndex: string) => {
 };
 const selectedDeviceHandler = (device: "pc" | "sp") => {
   selectedDevice.value = device;
-  console.log(selectedDevice.value);
   if (displayPage.value === "3") {
     open(`/assignment${displayPage.value}`, "_blank");
+  } else if (displayPage.value === "6") {
+    open(
+      `/${selectedDevice.value}/assignment${displayPage.value}/home`,
+      "_blank",
+    );
   } else {
     open(`/${selectedDevice.value}/assignment${displayPage.value}`, "_blank");
   }

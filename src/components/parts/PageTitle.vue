@@ -22,11 +22,11 @@ defineProps<{
   padding: 80px 0 30px 0;
   font-weight: 400;
 
-  .common {
+  &.common {
     margin-bottom: 80px;
   }
 
-  .inquiry {
+  &.inquiry {
     margin-bottom: 80px;
   }
 
@@ -52,11 +52,11 @@ defineProps<{
   padding-bottom: 15px;
   font-weight: 400;
 
-  .common {
+  &.common {
     margin-bottom: 50px;
   }
 
-  .inquiry {
+  &.inquiry {
     margin-bottom: 80px;
   }
 

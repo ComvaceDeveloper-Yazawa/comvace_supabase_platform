@@ -1,3 +1,12 @@
-$brand: #3b82f6;
-$radius: 16px;
-$shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+:root {
+  // テキストカラー
+  --color-company-theme: #d89323;
+  --color-header-footer: #fefdf4;
+
+  // 背景カラー
+  --background-color-main: #f9f9f9;
+
+  // 横幅
+  --pc-width: 1440px;
+  --sp-width: 390px;
+}

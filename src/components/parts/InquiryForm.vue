@@ -99,7 +99,7 @@ const props = defineProps({
 <style scoped lang="scss">
 .pc-title {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 40px;
 }

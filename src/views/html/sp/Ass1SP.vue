@@ -68,7 +68,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
 }
 
 .content {
-  background-color: #fff9f4;
+  background-color: var(--background-color-main);
   width: 100%;
   padding: 50px 0;
   display: flex;
