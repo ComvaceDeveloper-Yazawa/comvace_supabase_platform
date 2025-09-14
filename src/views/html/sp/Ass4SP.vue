@@ -11,7 +11,7 @@ import NavigationModal from "@/components/modal/NavigationModal.vue";
         <PageTitle :title="'購入手続き'" :type="'common'" :device="'sp'" />
         <PaymentSelect :isPc="false" />
         <PageBottomNavSP
-          :text="'購入手続きはこちらから行うことができます'"
+          :text="'注文を確定しますか？'"
           :isSingleButton="false"
           buttonPrevText="戻る"
           buttonNextText="購入に進む"
