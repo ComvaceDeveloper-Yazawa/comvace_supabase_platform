@@ -28,15 +28,13 @@ const openProductDetailModal = defineModel();
         <div class="action">
           <div class="quantity">
             <p>数量</p>
-            <div class="select">
-              <select name="category" id="category">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
+            <select name="category" id="category">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
           <button class="add-button">カートに追加する</button>
         </div>
@@ -105,23 +103,21 @@ const openProductDetailModal = defineModel();
     font-size: 20px;
     font-weight: 400;
   }
-  .select {
-    select {
-      height: 40px;
-      width: 120px;
-      border: 1px solid #dddddd;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: #fff;
-      padding-left: 30px;
-      cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: url("/src/assets/selector.png") no-repeat right 10px center
-        #fff;
-    }
+  select {
+    height: 40px;
+    width: 120px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    padding-left: 30px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("/src/assets/selector.png") no-repeat right 10px center #fff;
   }
+
   button {
     background-color: #fff;
     border: 1px solid #000;
