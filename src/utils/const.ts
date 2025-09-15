@@ -70,12 +70,12 @@ export const productCartList: ProductCartListModel[] = [
   },
 ];
 
-// ホーム画面のインデックス定義
+// 課題メニュー
 interface HomeIndexMenuModel {
   id: string;
   text: string;
 }
-export const homeIndexMenu: HomeIndexMenuModel[] = [
+export const homeIndexHTMLMenu: HomeIndexMenuModel[] = [
   {
     id: "1",
     text: "課題1",
@@ -102,7 +102,34 @@ export const homeIndexMenu: HomeIndexMenuModel[] = [
   },
 ];
 
-// ホーム画面のインデックス定義
+export const homeIndexVueMenu: HomeIndexMenuModel[] = [
+  {
+    id: "1",
+    text: "課題1",
+  },
+  {
+    id: "2",
+    text: "課題2",
+  },
+  {
+    id: "3",
+    text: "課題3",
+  },
+  {
+    id: "4",
+    text: "課題4",
+  },
+  {
+    id: "5",
+    text: "課題5",
+  },
+  {
+    id: "6",
+    text: "課題6",
+  },
+];
+
+// ホーム画面の商品リスト定義
 interface HomeMenuListModel {
   id: number;
   path: string;
@@ -159,3 +186,57 @@ export const homeMenuList: HomeMenuListModel[] = [
     price: "￥3,350",
   },
 ];
+
+// 都道府県リスト定義
+interface PrefListModel {
+  id: number;
+  pref: string;
+}
+export const prefList: PrefListModel[] = [
+  {
+    id: 1,
+    pref: "北海道",
+  },
+  {
+    id: 2,
+    pref: "青森県",
+  },
+  {
+    id: 3,
+    pref: "岩手県",
+  },
+  {
+    id: 4,
+    pref: "宮城県",
+  },
+  {
+    id: 5,
+    pref: "秋田県",
+  },
+  {
+    id: 6,
+    pref: "山形県",
+  },
+  {
+    id: 7,
+    pref: "福島県",
+  },
+  {
+    id: 8,
+    pref: "茨城県",
+  },
+  {
+    id: 9,
+    pref: "栃木県",
+  },
+];
+
+export const placeHolder = {
+  address: "例：東京都東京区東京1-10　マンション東京　102号室",
+  name: "例：山田 花子",
+  email: "例：contact@example.com",
+  phone: "例：03-0000-0000",
+  inquiry:
+    "例：領収書の発行について不明点がありますので電話でのサポートを希望します",
+  cardNumber: "例：1234 5678 9012 3456",
+};

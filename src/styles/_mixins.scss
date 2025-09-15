@@ -1,5 +1,62 @@
-@mixin card {
-  border-radius: $radius;
-  box-shadow: $shadow;
-  background: #fff;
+@mixin input($inputType: "text") {
+  height: 35px;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 20px;
+  width: 100%;
+
+  &::placeholder {
+    color: #a5a5a5;
+  }
+}
+
+@mixin select($imageType: "", $distance: 20px) {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 20px;
+  background: url("/src/assets/selector.png") no-repeat right $distance center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+
+  // 擬似的なplaceholderを表示する場合（selectタグがrequiredの場合のみに適用する）
+  &:invalid {
+    color: #a5a5a5;
+  }
+
+  @if $imageType == "gray" {
+    background: url("/src/assets/selector-gray.png")
+      no-repeat
+      right
+      $distance
+      center;
+  }
+}
+
+@mixin radio-box($deviceType: "pc") {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #dddddd;
+  margin-right: 20px;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+
+  &:checked {
+    background-color: #e7d032;
+  }
+
+  // 引数が'sp'の場合
+  @if $deviceType == "sp" {
+    width: 10px;
+    height: 10px;
+  }
 }
