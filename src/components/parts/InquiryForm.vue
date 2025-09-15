@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { placeHolder } from "@/utils/const";
 import CommonButton from "./CommonButton.vue";
 const props = defineProps({
   isPc: {
@@ -37,7 +38,7 @@ const props = defineProps({
             class="common-input"
             type="text"
             id="name"
-            placeholder="例：山田 花子"
+            :placeholder="placeHolder.name"
           />
         </div>
       </div>
@@ -48,7 +49,7 @@ const props = defineProps({
             class="common-input"
             type="email"
             id="email"
-            placeholder="例：contact@example.com"
+            :placeholder="placeHolder.email"
           />
           <p class="error">
             メールアドレスの形式が間違っています。contact@example.com
@@ -62,7 +63,7 @@ const props = defineProps({
             class="common-input"
             type="tel"
             id="tel"
-            placeholder="例：03-0000-0000"
+            :placeholder="placeHolder.phone"
           />
           <p class="error">
             電話番号の形式が間違っています。ハイフンありで入力してください。
@@ -76,7 +77,7 @@ const props = defineProps({
             class="common-input"
             type="text"
             id="tel"
-            placeholder="例：領収書の発行について不明点がありますので電話でのサポートを希望します"
+            :placeholder="placeHolder.inquiry"
           ></textarea>
         </div>
       </div>
@@ -162,25 +163,12 @@ const props = defineProps({
         right: -40px;
       }
     }
-    .common-input {
-      height: 35px;
-      border: 1px solid #a5a5a5;
-      border-radius: 5px;
-      outline: none;
-      padding-left: 20px;
-    }
-
     select {
-      appearance: none;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: url("/src/assets/selector-gray.png") no-repeat right 20px
-        center;
+      @include select("gray", 20px);
     }
-
-    select:invalid {
-      color: #a5a5a5;
+    input,
+    textarea {
+      @include input;
     }
   }
 
