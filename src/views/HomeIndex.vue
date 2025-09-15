@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { homeIndexMenu } from "../utils/const";
+import { homeIndexHTMLMenu, homeIndexVueMenu } from "../utils/const";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { storeToRefs } from "pinia";
 import { useGlobalStore } from "../stores/global.store";
@@ -20,6 +20,8 @@ const selectedAssignment = (pageIndex: string) => {
   displayPage.value = pageIndex;
   selectedMenu.value = "device";
 };
+
+// HTML用のページハンドラー
 const selectedDeviceHandler = (device: "pc" | "sp") => {
   selectedDevice.value = device;
   if (displayPage.value === "3") {
@@ -32,6 +34,12 @@ const selectedDeviceHandler = (device: "pc" | "sp") => {
   } else {
     open(`/${selectedDevice.value}/assignment${displayPage.value}`, "_blank");
   }
+};
+
+// Vue用のページハンドラー
+const pageChangeHandlerOnVue = (id: string) => {
+  displayPage.value = id;
+  open(`/vue/assignment${displayPage.value}`, "_blank");
 };
 
 // OpeningAnimation
@@ -69,14 +77,14 @@ function onAnimEnd(_e: AnimationEvent) {
     <nav v-if="selectedMenu === 'main'" class="scroll-pane">
       <h2>めにゅー</h2>
       <p @click="selectedMenu = 'html'">HTML</p>
-      <!-- <p @click="selectedMenu = 'vue'">Vue</p> -->
+      <p @click="selectedMenu = 'vue'">Vue</p>
     </nav>
 
     <!-- HTML用のメニュー表示 -->
     <nav v-if="selectedMenu === 'html'" class="scroll-pane">
       <h2 @click="selectedMenu = 'main'">もどる</h2>
       <p
-        v-for="menu in homeIndexMenu"
+        v-for="menu in homeIndexHTMLMenu"
         :key="menu.id"
         @click="selectedAssignment(menu.id)"
       >
@@ -85,10 +93,16 @@ function onAnimEnd(_e: AnimationEvent) {
     </nav>
 
     <!-- Vue用のメニュー表示 -->
-    <!-- <nav v-if="selectedMenu === 'vue'" class="scroll-pane">
+    <nav v-if="selectedMenu === 'vue'" class="scroll-pane">
       <h2 @click="selectedMenu = 'main'">もどる</h2>
-      <p>作成中</p>
-    </nav> -->
+      <p
+        v-for="menu in homeIndexVueMenu"
+        :key="menu.id"
+        @click="pageChangeHandlerOnVue(menu.id)"
+      >
+        {{ menu.text }}
+      </p>
+    </nav>
 
     <nav v-if="selectedMenu === 'device'" class="scroll-pane">
       <h2 @click="selectedMenu = 'main'">もどる</h2>

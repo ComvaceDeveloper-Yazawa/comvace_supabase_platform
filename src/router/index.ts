@@ -115,6 +115,19 @@ const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  // vue curriculum
+  {
+    path: "/vue/assignment1",
+    name: "/vue/assignment1",
+    component: () => import("@/views/vue/pc/Ass1.vue"),
+    meta: { title: "Vue課題1" },
+  },
+  {
+    path: "/vue/assignment2",
+    name: "/vue/assignment2",
+    component: () => import("@/views/vue/pc/Ass2.vue"),
+    meta: { title: "Vue課題2" },
+  },
   // 404（キャッチオール）
   // {
   //   path: "/:pathMatch(.*)*",
